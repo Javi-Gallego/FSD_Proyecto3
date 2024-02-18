@@ -1,8 +1,26 @@
-# Compra de empanadas
+# Reto de las empanadas :man_cook:
 
-## Enunciado del problema
+Welcome to the 3rd project for the GeeksHubs Academy. It is a logic problem we have to solve.
 
-El profesor Maple se embarca en la tarea de adquirir empanadas para todos los participantes del bootcamp de programación. Dado que hoy es el Día de las Empanadas,  hay una oferta especial en la que te llevas hasta tres empanadas y solo pagas la más cara. Con un presupuesto ajustado para el curso, los profesores debaten para intentar minimizar el gasto total por todas las empanadas.
+## Table of Contents 🗂️
+
+- [Stack :hammer:](#stack)
+- [Problem :star2:](#problem)
+- [Solution :star:](#solution)
+- [Author :black_nib:](#autor)
+
+## <a id="stack">Stack :hammer:</a>
+
+- **Javascript**
+- **Node**
+
+## <a id="features">Problem :star2:</a>
+
+I will copy the spanish original statement:
+
+"Compra de empanadas
+Enunciado del problema
+El profesor Maple se embarca en la tarea de adquirir empanadas para todos los participantes del bootcamp de programación. Dado que hoy es el Día de las Empanadas, hay una oferta especial en la que te llevas hasta tres empanadas y solo pagas la más cara. Con un presupuesto ajustado para el curso, los profesores debaten para intentar minimizar el gasto total por todas las empanadas.
 
 Entonces, el profesor Maple decide seguir la siguiente estrategia: como la empanada más cara la tendrá que pagar de todas formas, la comprará junto a la segunda y tercera más caras, que ofrecen el mayor ahorro. Con las n-3 empanadas restantes, aplicará el mismo procedimiento hasta que no quede ninguna.
 
@@ -20,67 +38,27 @@ Ayúdales haciendo una función que lo calcule lo más rápido posible: hay dece
 
 Las empanadas que han elegido los profesores tienen 3, 4 o 5 ingredientes. La masa de una empanada vale 6 euros, y cada ingrediente adicional vale 2 euros. Así, las empanadas pueden valer 12, 14 o 16 euros. Se garantiza que el número total de empanadas será múltiplo de 3.
 
-## Entrada
-
+Entrada
 La función debe tener tres parámetros de entrada. Cada conjunto de entrada consta de tres enteros, a b c, que son el número de empanadas de 3, 4 y 5 ingredientes, respectivamente. Se garantiza que el número de empanadas, a + b + c, cumple que a + b + c < 40. Además, el número de empanadas es divisible entre 3.
 
-## Salida
+Salida
+Por cada conjunto de entrada, retornar un único entero: la mínima cantidad de euros que se puede pagar para llevarse todas las empanadas"
 
-Por cada conjunto de entrada, retornar un único entero: la mínima cantidad de euros que se puede pagar para llevarse todas las empanadas.
+## <a id="solution">Solution :star:</a>
 
-## Ejemplos de casos de uso
+I divided the problem in three parts.
 
-| Entrada     | Salida      |
-| ----------- | ----------- |
-| 1, 1, 1     | 14          |
-| 3, 3, 0     | 26          |
-| 2, 0, 1     | 14          |
-| 9, 10, 11   | 142         |
+First I treated the cases in which the entry values are not valid. In these cases the function throws Errors whith the explanation of the cause of the error.
 
+Second I started the problem itself. I thought the best way to save money was to mix as much expensive ones as I can, firstly with the cheaper ones and later with the medium priced patties. After that, when I could not mix more expensive patties I should proceed by mixing as much medium priced patties as I can with the cheaper ones. For this part I used q'while' loops.
 
-## Instrucciones de uso
+Once I reduced the amount of patties to a max (the total amount of products is the same but we have reduced the number of expensive patties) we proceed to make groups of three in which we pay only for the expensive one. I thought that the best way was to get patties in order of price, first the expensive and to end by getting the cheaper ones.
 
-1. Clonar el repositorio
-3. Instalar las dependencias:
+With that I passed all the tests.
 
-    ```bash
-    npm install
-    ```
+## <a id="autor">Author :black_nib:</a>
 
-4. Completar los argumentos y el cuerpo de la función `fn` en el archivo (`main.js`). No se debe renombrar la función `fn`.
-
-    ```javascript
-    // main.js
-    export const fn = (/* argumentos de la función */) => {
-    // Cuerpo de la función: Completa la lógica de la función aquí.
-    };
-    ```
-
-4. Ejecutar los test:
-    ```bash
-    npm run test
-    ```
-
-## Evaluación
-
-### Mínimo
-Para el APTO se deben pasar todos los test excepto los de validaciones de errores en la entrada de datos
-
-### Extra
-Pasar los test de validación de errores en la entrada de datos (Throws error)
-
-### Ejemplo de ejecución de los test
-
-```bash
-✓ main.test.js (7)
-   ✓ Function fn - Input Parameter Test Cases (7)
-     ✓ Case: fn(1, 1, 1) - Expected Result: 14
-     ✓ Case: fn(3, 3, 0) - Expected Result: 26
-     ✓ Case: fn(2, 0, 1) - Expected Result: 14
-     ✓ Case: fn(9, 10, 11) - Expected Result: 142
-     ✓ Throw error on negative input value: fn(-1, 3, 1)
-     ✓ Throws error when the total sum of inputs (2+2+1) is not a multiple of 3: fn(2, 2, 1)
-     ✓ Throws error when the total sum of inputs (15+15+20) is not less than 40: fn(15, 15, 20)
-```
+- **Javier Gallego** - Project Developer
+  - [GitHub](https://github.com/Javi-Gallego) - [LinkedIn](https://www.linkedin.com/in/javier-gallego-garrido-1433a5157/) 
 
  
